@@ -3,6 +3,6 @@ import { getAllJoyasController } from "../Controller/joyasController.js";
 
 const router = express.Router();
 
-router.get("/inventario ", getAllJoyasController);
+router.get("/inventario", getAllJoyasController);
 
 export default router;

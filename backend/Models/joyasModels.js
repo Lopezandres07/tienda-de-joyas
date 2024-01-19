@@ -11,11 +11,7 @@ const getAllJoyas = async () => {
   }
 };
 
-const getAllJoyasWithFormat = async (
-  order_by = "stock_ASC",
-  limits = 0,
-  page = 0
-) => {
+const getAllJoyasWithFormat = async (order_by = "id", limits = 6, page = 0) => {
   const [attribute, direction] = order_by.split("_");
   const offset = page * limits;
   const allJoyas = format(
@@ -29,4 +25,9 @@ const getAllJoyasWithFormat = async (
   return response.rows;
 };
 
-export { getAllJoyas, getAllJoyasWithFormat };
+const getAllJoyasHateoas = async (req, res) => {
+  const allJoyas = await pool.query("SELECT * FROM inventario");
+  return allJoyas.rows;
+};
+
+export { getAllJoyas, getAllJoyasWithFormat, getAllJoyasHateoas };

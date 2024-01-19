@@ -1,4 +1,9 @@
-import { getAllJoyas, getAllJoyasWithFormat } from "../Models/joyasModels.js";
+import {
+  getAllJoyas,
+  getAllJoyasHateoas,
+  getAllJoyasWithFormat,
+} from "../Models/joyasModels.js";
+import HATEOAS from "../helpers/hateoas.js";
 
 const getAllJoyasController = async (req, res) => {
   try {
@@ -20,4 +25,14 @@ const getJoyasWithFormat = async (req, res) => {
   }
 };
 
-export { getAllJoyasController, getJoyasWithFormat };
+const getJoyasWithHateoas = async (req, res) => {
+  try {
+    const allJoyas = await getAllJoyasHateoas();
+    const allJoyasWithHateoas = await HATEOAS("joyas", allJoyas);
+    res.status(200).json(allJoyasWithHateoas);
+  } catch (error) {
+    res.status(500).send("Error interno del servidor");
+  }
+};
+
+export { getAllJoyasController, getJoyasWithFormat, getJoyasWithHateoas };

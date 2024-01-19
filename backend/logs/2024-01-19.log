@@ -1,0 +1,52 @@
+
+Started GET / for :: ::1 at Fri Jan 19 2024 10:58:06 GMT-0300 (hora de verano de Chile)
+  Parameters in body: {}
+Completed: 404 message:  Time response: 13 ms Request ID: [93ca0386-1caa-452e-9193-95d66eee2087]
+
+Started GET /api/joyas for :: ::1 at Fri Jan 19 2024 10:58:16 GMT-0300 (hora de verano de Chile)
+  Parameters in body: {}
+Completed: 304 message:  Time response: 64 ms Request ID: [3b774327-cb8f-4287-ac58-29e01c4a6117]
+
+Started GET /api/joyas for :: ::ffff:127.0.0.1 at Fri Jan 19 2024 10:58:43 GMT-0300 (hora de verano de Chile)
+  Parameters in body: {}
+Completed: 200 message:  Time response: 38 ms Request ID: [a5d1965a-9294-4b83-b2dc-ef747fd8ce82]
+
+Started GET /api/joyas for :: ::ffff:127.0.0.1 at Fri Jan 19 2024 11:15:06 GMT-0300 (hora de verano de Chile)
+  Parameters in body: {}
+Completed: 200 message:  Time response: 59 ms Request ID: [cca59d8f-636c-4309-bc4f-4a691af3b586]
+
+Started GET /api/joyas for :: ::ffff:127.0.0.1 at Fri Jan 19 2024 11:38:57 GMT-0300 (hora de verano de Chile)
+  Parameters in body: {}
+Completed: 200 message:  Time response: 162 ms Request ID: [b80812db-1116-403c-83a7-449e407fc0a2]
+
+Started GET /api/joyas_with_format for :: ::ffff:127.0.0.1 at Fri Jan 19 2024 11:39:49 GMT-0300 (hora de verano de Chile)
+  Parameters in body: {}
+Completed: 200 message:  Time response: 40 ms Request ID: [e6640047-4e3f-4e38-af5e-6c13e7d981fa]
+
+Started GET /api/joyas_with_format for :: ::1 at Fri Jan 19 2024 11:40:42 GMT-0300 (hora de verano de Chile)
+  Parameters in body: {}
+Completed: 200 message:  Time response: 42 ms Request ID: [2764548e-a5ed-409d-a374-04a961d70dbe]
+
+Started GET /api/joyas_with_format for :: ::ffff:127.0.0.1 at Fri Jan 19 2024 11:41:15 GMT-0300 (hora de verano de Chile)
+  Parameters in body: {}
+Completed: 200 message:  Time response: 58 ms Request ID: [8038aa1b-3c41-47ef-a7c6-cae27a3f026f]
+
+Started GET /api/joyas_with_format for :: ::ffff:127.0.0.1 at Fri Jan 19 2024 11:41:36 GMT-0300 (hora de verano de Chile)
+  Parameters in body: {}
+Completed: 200 message:  Time response: 58 ms Request ID: [771d5deb-468d-4a0d-935a-a76fafe70f67]
+
+Started GET /api/joyas_with_format for :: ::ffff:127.0.0.1 at Fri Jan 19 2024 11:41:57 GMT-0300 (hora de verano de Chile)
+  Parameters in body: {}
+Completed: 200 message:  Time response: 59 ms Request ID: [52195d69-8ab1-4042-9388-9151353590da]
+
+Started GET /api/joyas_with_format for :: ::ffff:127.0.0.1 at Fri Jan 19 2024 11:42:23 GMT-0300 (hora de verano de Chile)
+  Parameters in body: {}
+Completed: 200 message:  Time response: 58 ms Request ID: [9884f02b-26e5-4c28-97a5-2e2d1688c8e8]
+
+Started GET /api/joyas_with_format for :: ::ffff:127.0.0.1 at Fri Jan 19 2024 11:42:45 GMT-0300 (hora de verano de Chile)
+  Parameters in body: {}
+Completed: 200 message:  Time response: 55 ms Request ID: [0c42220f-b877-48eb-8290-22094202b2d6]
+
+Started GET /api/joyas_with_format?limit=3&page=2 for :: ::ffff:127.0.0.1 at Fri Jan 19 2024 11:43:59 GMT-0300 (hora de verano de Chile)
+  Parameters in body: {}
+Completed: 200 message:  Time response: 41 ms Request ID: [bd004922-a0ad-4b16-9fe3-55adb0de9af1]

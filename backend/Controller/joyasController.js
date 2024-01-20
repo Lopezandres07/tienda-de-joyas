@@ -1,38 +1,30 @@
-import {
-  getAllJoyas,
-  getAllJoyasHateoas,
-  getAllJoyasWithFormat,
-} from "../Models/joyasModels.js";
-import HATEOAS from "../helpers/hateoas.js";
+import { filterQuery, getAllJoyasWithFormat } from '../Models/joyasModels.js'
+import HATEOAS from '../helpers/hateoas.js'
 
-const getAllJoyasController = async (req, res) => {
+export const getAllJoyasController = async (req, res) => {
+  const { order_by, limits, page } = req.query
+
   try {
-    const joyas = await getAllJoyas();
-    res.status(200).json(joyas);
+    const allJoyas = await getAllJoyasWithFormat(order_by, limits, page)
+    const allJoyasWithHateoas = await HATEOAS('joyas', allJoyas)
+    res.status(200).json(allJoyasWithHateoas)
   } catch (error) {
-    console.error("Error en el controlador", error);
-    res.status(500).send("Error interno del servidor");
+    console.error('Error en el controlador', error)
+    res.status(500).send('Error interno del servidor')
   }
-};
+}
 
-const getJoyasWithFormat = async (req, res) => {
+export const getFilteredJoyasController = async (req, res) => {
+  const { precio_max, precio_min, categoria, metal } = req.query
+  const filters = { precio_max, precio_min, categoria, metal }
+
+  console.log('filters:', filters)
+
   try {
-    const { order_by, limit, page } = req.query;
-    const allJoyas = await getAllJoyasWithFormat(order_by, limit, page);
-    res.status(200).json({ joyas: allJoyas });
+    const FilteredJoyas = await filterQuery(filters)
+    res.status(200).json(FilteredJoyas)
   } catch (error) {
-    res.status(500).send("Error interno del servidor");
+    console.error('Error en el controlador', error)
+    res.status(500).send('Error interno del servidor')
   }
-};
-
-const getJoyasWithHateoas = async (req, res) => {
-  try {
-    const allJoyas = await getAllJoyasHateoas();
-    const allJoyasWithHateoas = await HATEOAS("joyas", allJoyas);
-    res.status(200).json(allJoyasWithHateoas);
-  } catch (error) {
-    res.status(500).send("Error interno del servidor");
-  }
-};
-
-export { getAllJoyasController, getJoyasWithFormat, getJoyasWithHateoas };
+}

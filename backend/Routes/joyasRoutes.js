@@ -1,14 +1,12 @@
-import express from "express";
+import express from 'express'
 import {
   getAllJoyasController,
-  getJoyasWithFormat,
-  getJoyasWithHateoas,
-} from "../Controller/joyasController.js";
+  getFilteredJoyasController,
+} from '../Controller/joyasController.js'
 
-const router = express.Router();
+const router = express.Router()
 
-router.get("/joyas", getAllJoyasController);
-router.get("/joyas_with_format", getJoyasWithFormat);
-router.get("/joyas_with_hateoas", getJoyasWithHateoas);
+router.get('/joyas', getAllJoyasController)
+router.get('/joyas/filtros', getFilteredJoyasController)
 
-export default router;
+export default router

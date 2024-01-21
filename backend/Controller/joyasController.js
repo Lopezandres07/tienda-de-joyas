@@ -1,12 +1,15 @@
+
 import { filterQuery, getAllJoyasWithFormat } from '../Models/joyasModels.js'
 import HATEOAS from '../helpers/hateoas.js'
+import pagination from '../helpers/pagination.js'
 
 export const getAllJoyasController = async (req, res) => {
-  const { order_by, limits, page } = req.query
+  const { order_by, limits, page, pages, items } = req.query
 
   try {
     const allJoyas = await getAllJoyasWithFormat(order_by, limits, page)
-    const allJoyasWithHateoas = await HATEOAS('joyas', allJoyas)
+    const paginationData = pagination(allJoyas, pages, items)
+    const allJoyasWithHateoas = await HATEOAS('joyas', paginationData)
     res.status(200).json(allJoyasWithHateoas)
   } catch (error) {
     console.error('Error en el controlador', error)
@@ -26,5 +29,5 @@ export const getFilteredJoyasController = async (req, res) => {
   } catch (error) {
     console.error('Error en el controlador', error)
     res.status(500).send('Error interno del servidor')
-  }
+  }
 }
